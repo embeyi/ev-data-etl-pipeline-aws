@@ -26,7 +26,7 @@ def lambda_handler(event, context):
                 if response.status_code == 200:
                     data = response.content
                     
-                    # Parse the URL to create a unique folder name based on the domain and path
+                    # Parse the URL to create a unique folder name based on the domain and path 
                     parsed_url = urlparse(api_url)
                     domain = parsed_url.netloc.replace('.', '_')
                     path = parsed_url.path.replace('/', '_').strip('_')
