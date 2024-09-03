@@ -14,7 +14,7 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init('job-landing-to-curated')
 
-# Hardcoded S3 paths
+# Hardcoded S3 paths 
 s3_input_path = 's3://aws-s3-dap-landing-dev/electric_vehicle_data_wa_gov/api_views_f6w7-q2d2_rows.csv'
 s3_output_path_type_bev = 's3://aws-s3-dap-curated-dev/Battery_Electric_Vehicle-BEV/'
 s3_output_path_type_phev = 's3://aws-s3-dap-curated-dev/Plug-in_Hybrid_Electric_Vehicle-PHEV/'
