@@ -7,4 +7,4 @@ AWS-based ETL pipeline for electric vehicle data processing. It ingests, transfo
 Dataset Used:
 Washington State Open Data Portal
 
-'https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD'
+- https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD
