@@ -13,7 +13,7 @@ def lambda_handler(event, context):
         api_urls = [
             'https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD'
             # 'https://data.wa.gov/api/views/3d5d-sdqb/rows.csv?accessType=DOWNLOAD'
-            # Add more URLs as needed
+            # Add more URLs as needed 
         ]
         
         bucket_name = 'aws-s3-dap-landing-dev'
@@ -26,7 +26,7 @@ def lambda_handler(event, context):
                 if response.status_code == 200:
                     data = response.content
                     
-                    # Parse the URL to create a unique folder name based on the domain and path 
+                    # Parse the URL to create a unique folder name based on the domain and path  
                     parsed_url = urlparse(api_url)
                     domain = parsed_url.netloc.replace('.', '_')
                     path = parsed_url.path.replace('/', '_').strip('_')
