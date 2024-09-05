@@ -1,0 +1,101 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Lambda Invoke",
+  "States": {
+    "Lambda Invoke": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:",
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException",
+            "Lambda.TooManyRequestsException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "Notify Lambda Failure"
+        }
+      ],
+      "Next": "Check Lambda Success"
+    },
+    "Check Lambda Success": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "Glue StartJobRun"
+        }
+      ],
+      "Default": "Notify Lambda Failure"
+    },
+    "Notify Lambda Failure": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "arn:aws:sns:us-east-1:",
+        "Message": "Lambda function failed"
+      },
+      "End": true
+    },
+    "Glue StartJobRun": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "job-landing-to-curated"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Glue.JobRunException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "Notify Glue Job 1 Failure"
+        }
+      ],
+      "Next": "Check Glue Job job-landing-to-curated Success"
+    },
+    "Check Glue Job job-landing-to-curated Success": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.JobRunState",
+          "StringEquals": "SUCCEEDED",
+          "Next": "End State"
+        }
+      ],
+      "Default": "Notify Glue Job 1 Failure"
+    },
+    "Notify Glue Job 1 Failure": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "arn:aws:sns:us-east-1:",
+        "Message": "ob-landing-to-curated failed"
+      },
+      "End": true
+    },
+    "End State": {
+      "Type": "Succeed"
+    }
+  }
+}
