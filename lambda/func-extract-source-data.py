@@ -31,7 +31,7 @@ def lambda_handler(event, context):
                     domain = parsed_url.netloc.replace('.', '_')
                     path = parsed_url.path.replace('/', '_').strip('_')
                     
-                    # Define the S3 object key (folder structure) 
+                    # Define the S3 object key (folder structure)  
                     file_name = f"electric_vehicle_{domain}/{path}"
                     
                     # Upload the file to S3
