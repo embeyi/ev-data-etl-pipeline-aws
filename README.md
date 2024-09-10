@@ -13,15 +13,15 @@ Washington State Open Data Portal
 The timeout for the AWS Lambda function was set to 1 min 59 seconds to ensure that the function has sufficient time to complete its tasks, especially given that it involves multiple steps such as making HTTP requests to fetch data from the US gov API, processing the data, and uploading it to an S3 bucket.
 
 ## S3
-### Raw Zone:
-Component: Landing Bucket (aws-s3-landing-dev)
+### Raw Zone: Landing Bucket (aws-s3-landing-dev)
 Setup: Configure AWS S3 to store raw data ingested by Lambda. Split the datasets into three different folders
 #### Reason: 
 Provides a scalable and durable storage solution for raw data.
 
- ### Transformed Bucket (aws-s3-curated-dev)
+ ### Transformed Zone: Transformed Bucket (aws-s3-curated-dev)
  Use to store the CSV file from the (job_landing_to_curated) Glue Job
-
+#### Reason: 
+Provides a scalable and durable storage solution for curated data based on different data sets.
 
  ## AWS GLue
 ### Glue Job (job_landing_to_curated)
