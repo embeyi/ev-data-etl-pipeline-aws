@@ -28,15 +28,18 @@ Provides a scalable and durable storage solution for curated data based on diffe
 Setup: This AWS Glue task takes a single file from landing bucket, splits data into two files based on categories and does some column naming convention updates before saving in different folders for each type of data set in curated bucket.  
 
 
-#### Reason: Converting these files to a better CSV simplifies data manipulation and analysis, making it more accessible for downstream processes such as data analytics, reporting, and machine learning.
+#### Reason: 
+Converting these files to a better CSV simplifies data manipulation and analysis, making it more accessible for downstream processes such as data analytics, reporting, and machine learning.
 
 
 ## Glue Crawler 
 ### (landing-bucket-crawler)
 Setup: Configure Glue Crawler to automatically discover data stored in S3 and populate the Glue Data Catalog.
-Reason: Simplifies metadata management by automatically detecting schema changes and updating the data catalog.
+### Reason:
+Simplifies metadata management by automatically detecting schema changes and updating the data catalog.
 
 
 ### (curated-bucket-crawler)
 Setup: Configure Glue Crawler to automatically discover data stored in S3 and populate the Glue Data Catalog.
-Reason: Simplifies metadata management by automatically detecting schema changes and updating the data catalog.
+### Reason: 
+Simplifies metadata management by automatically detecting schema changes and updating the data catalog.
