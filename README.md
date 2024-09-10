@@ -23,7 +23,7 @@ Provides a scalable and durable storage solution for raw data.
 #### Reason: 
 Provides a scalable and durable storage solution for curated data based on different data sets.
 
- ## AWS GLue
+ ## AWS Glue
 ### Glue Job (job_landing_to_curated)
 Setup: This AWS Glue task takes a single file from landing bucket, splits data into two files based on categories and does some column naming convention updates before saving in different folders for each type of data set in curated bucket.  
 
