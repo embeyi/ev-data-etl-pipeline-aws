@@ -32,8 +32,15 @@ Setup: This AWS Glue task takes a single file from landing bucket, splits data i
 #### Reason: 
 Converting these files to a better CSV simplifies data manipulation and analysis, making it more accessible for downstream processes such as data analytics, reporting, and machine learning.
 
+### Configuration
+Number of workers: 2 for cost control
+Job Timout: 20 minutes - for cost control in cost of exceptions while job keeps running and consuming resources
+
 
 ## Glue Crawler 
+AWS Glue Crawler is a service that automatically discovers and catalogs data in various data stores, such as S3, RDS, and DynamoDB. It simplifies the process of managing and maintaining up-to-date metadata for your datasets.
+
+
 ### (landing-bucket-crawler)
 Setup: Configure Glue Crawler to automatically discover data stored in S3 and populate the Glue Data Catalog.
 
@@ -42,3 +49,24 @@ Setup: Configure Glue Crawler to automatically discover data stored in S3 and po
 
 ### Reason: 
 Simplifies metadata management by automatically detecting schema changes and updating the data catalog.
+ To automate the process of detecting schema changes and updating the Glue Data Catalog, ensuring data remains easily accessible and queryable.
+Setup:Create and configure a Glue Crawler in the AWS Glue Console, specify data sources, define an IAM role with appropriate permissions, and run the crawler to populate the Glue Catalog Database with metadata
+
+
+## Glue Catalog Database
+AWS Glue Catalog Database is a centralized repository to store metadata about data assets. It helps in managing schema and data locations, making it easier for ETL jobs to discover and query data efficiently.
+
+### Reason: 
+To organize and maintain metadata of datasets, enabling easy data discovery and management.
+### Setup:
+Create a Glue Catalog Database using the AWS Glue Console or AWS CLI, defining necessary metadata and schema details.
+
+
+## Glue Catalog Tables
+Glue Catalog Tables are metadata definitions in the Glue Catalog Database that describe the structure and location of data stored in various data stores.
+
+### Reason:
+To enable data analysts and engineers to query and transform data efficiently without worrying about data location or schema.
+
+### Setup:
+Create Glue Catalog Tables via the AWS Glue Console, AWS CLI, or by running AWS Glue crawlers to automatically infer the schema and create tables.
