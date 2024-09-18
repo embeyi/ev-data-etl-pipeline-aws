@@ -14,7 +14,7 @@ The timeout for the AWS Lambda function was set to 1 min 59 seconds to ensure th
 
 
 ## S3
-### Raw Zone: Landing Bucket (aws-s3-landing-dev)
+### Raw Zone: Landing Bucket (aws-s3-landing-dev) 
 Setup: Configure AWS S3 to store raw data ingested by Lambda. Split the datasets into three different folders 
 #### Reason: 
 Provides a scalable and durable storage solution for raw data. 
