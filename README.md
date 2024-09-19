@@ -29,6 +29,11 @@ Provides a scalable and durable storage solution for curated data based on diffe
 ### Glue Job (job_landing_to_curated)
 Setup: This AWS Glue task takes a single file from landing bucket, splits data into two files based on categories and does some column naming convention updates before saving in different folders for each type of data set in curated bucket.  
 
+![job_landing_to_curated](job-landing-to-curated-setting.png)
+
+![job_landing_to_curated](job-landing-to-curated-setting-2.png)
+
+
 ![job_landing_to_curated](job-landing-to-curated.png)
 
 #### Reason: 
@@ -42,6 +47,7 @@ Job Timout: 20 minutes - for cost control in cost of exceptions while job keeps 
 ## Glue Crawler 
 AWS Glue Crawler is a service that automatically discovers and catalogs data in various data stores, such as S3, RDS, and DynamoDB. It simplifies the process of managing and maintaining up-to-date metadata for your datasets.
 
+![job_landing_to_curated](create-crawler.png)
 
 ### (landing-bucket-crawler)
 Setup: Configure Glue Crawler to automatically discover data stored in S3 and populate the Glue Data Catalog.
