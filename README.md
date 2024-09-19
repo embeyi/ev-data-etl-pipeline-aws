@@ -29,6 +29,8 @@ Provides a scalable and durable storage solution for curated data based on diffe
 ### Glue Job (job_landing_to_curated)
 Setup: This AWS Glue task takes a single file from landing bucket, splits data into two files based on categories and does some column naming convention updates before saving in different folders for each type of data set in curated bucket.  
 
+![job_landing_to_curated](job-landing-to-curated.png)
+
 #### Reason: 
 Converting these files to a better CSV simplifies data manipulation and analysis, making it more accessible for downstream processes such as data analytics, reporting, and machine learning.
 
