@@ -66,7 +66,7 @@ AWS Glue Catalog Database is a centralized repository to store metadata about da
 
 ### Reason: 
 To organize and maintain metadata of datasets, enabling easy data discovery and management.
-### Setup:
+### Setup: 
 Create a Glue Catalog Database using the AWS Glue Console or AWS CLI, defining necessary metadata and schema details.
 
 
