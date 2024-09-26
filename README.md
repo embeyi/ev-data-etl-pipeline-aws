@@ -19,7 +19,7 @@ Setup: Configure AWS S3 to store raw data ingested by Lambda. Split the datasets
 #### Reason: 
 Provides a scalable and durable storage solution for raw data.   
 
- ### Transformed Zone: Transformed Bucket (aws-s3-curated-dev)
+ ### Transformed Zone: Transformed Bucket (aws-s3-curated-dev) 
  Use to store the CSV file from the (job_landing_to_curated) Glue Job
 #### Reason: 
 Provides a scalable and durable storage solution for curated data based on different data sets.
