@@ -1,3 +1,69 @@
+# EV Data ETL Pipeline - AWS
+
+This repository contains the ETL pipeline for processing Electric Vehicle (EV) data using a variety of AWS services, including Lambda, S3, Step Functions, Glue, Athena, and Data Catalog. The pipeline automates the ingestion, transformation, and storage of EV-related data for downstream analytics and reporting.
+
+## Features
+
+- **Serverless Architecture:** Uses AWS Lambda for compute tasks, providing a scalable, cost-effective serverless solution.
+- **Data Ingestion:** Data is automatically ingested from S3 buckets and triggered by events such as file uploads.
+- **Data Transformation:** AWS Glue handles data transformations, utilizing Spark-based jobs to convert raw data into structured formats.
+- **Data Querying:** Amazon Athena is used to query processed data directly from S3 using SQL queries.
+- **Metadata Management:** AWS Glue Data Catalog tracks metadata, schema, and table definitions for easy querying.
+- **Orchestration:** AWS Step Functions orchestrate the entire ETL workflow, managing the coordination of services.
+- **Monitoring:** AWS CloudWatch monitors all pipeline processes, logging, and providing alerts for failures and performance metrics.
+
+## AWS Services Used
+
+1. **Lambda:** To handle specific data processing tasks and orchestrations.
+2. **S3:** For storing raw data, intermediate files, and processed output.
+3. **Glue:** For ETL processes, transforming raw data into queryable formats like Parquet or CSV.
+4. **Step Functions:** To orchestrate and monitor the ETL workflow.
+5. **Athena:** For querying processed data directly from S3.
+6. **Glue Data Catalog:** To manage schema and metadata for the datasets.
+7. **CloudWatch:** For logging, monitoring, and alerting across the pipeline.
+
+## Prerequisites
+
+Before deploying this pipeline, ensure the following:
+
+- **AWS Account:** You will need an active AWS account with permissions to create Lambda functions, S3 buckets, Glue jobs, Step Functions, and more.
+- **AWS CLI:** Set up AWS CLI or use the AWS Management Console to manage and deploy services.
+- **Data Source:** Data should be available in S3 for ingestion into the pipeline.
+
+## Architecture
+
+The high-level architecture of the pipeline is as follows:
+
+1. **Data Ingestion:**
+   - Raw data is uploaded to an S3 bucket.
+   - An S3 event triggers an AWS Lambda function that kicks off the pipeline.
+
+2. **Data Transformation:**
+   - AWS Step Functions orchestrate the workflow by calling Glue jobs to transform the data.
+   - Glue uses Spark to clean and convert the data into the required format (e.g., Parquet or CSV).
+
+3. **Data Storage and Querying:**
+   - The processed data is stored in another S3 bucket.
+   - AWS Glue Data Catalog stores metadata and schema information for Athena to query the data.
+
+4. **Data Analytics:**
+   - Amazon Athena is used to run queries on the processed data directly from S3 using SQL, enabling quick and scalable data analysis.
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/ev-data-etl-pipeline-aws.git
+
+```
+
+
+
+
+
+
+
 # ev-data-etl-pipeline-aws
 AWS-based ETL pipeline for electric vehicle data processing. It ingests, transforms, and loads data into a data warehouse using services like AWS Lambda, Glue, Athena and S3. The pipeline ensures data cleaning, validation, and enrichment for comprehensive analysis and reporting.
 
