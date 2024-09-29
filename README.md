@@ -20,7 +20,7 @@ This repository contains the ETL pipeline for processing Electric Vehicle (EV) d
 4. **Step Functions:** To orchestrate and monitor the ETL workflow.
 5. **Athena:** For querying processed data directly from S3.
 6. **Glue Data Catalog:** To manage schema and metadata for the datasets.
-7. **CloudWatch:** For logging, monitoring, and alerting across the pipeline.
+7. **CloudWatch:** For logging, monitoring, and alerting across the pipeline. 
 
 ## Prerequisites
 
