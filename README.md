@@ -62,6 +62,29 @@ git clone https://github.com/embeyi/ev-data-etl-pipeline-aws.git
 ```
 
 
+## Power BI Visuals and Their Role in Business Decision-Making
+
+Power BI is a powerful business intelligence tool used to visualize data and derive actionable insights. In this project, curated EV data is visualized using Power BI to track sales trends for specific vehicle models across different regions of the US over the years. These visuals help businesses:
+
+- **Identify Market Trends:** Power BI's visuals provide a clear view of sales patterns and trends across regions, helping businesses understand where demand is growing and where it’s declining.
+  
+
+- **Faster Response to Market Changes:** Visual analytics in Power BI enables faster responses to market changes by uncovering real-time insights. Whether it’s identifying low-performing models or emerging high-demand regions, businesses can adapt quickly to maintain competitiveness.
+
+By integrating this pipeline with Power BI, businesses not only automate the ingestion and processing of raw data but also unlock the ability to visualize this data in meaningful ways, driving better and faster business decisions.
+
+
+![Job Config 2](HEV-BEVByMakers.png)
+
+- **Enhanced Reporting:** With Power BI, users can create interactive reports that allow stakeholders to drill down into specific data points, filter insights by region or time period, and adjust focus based on evolving business needs.
+
+![Job Run](Vehicleinarea.png)
+
+- **Make Data-Driven Decisions:** Instead of relying on intuition, Power BI dashboards empower decision-makers with data-driven insights. Visualizations highlight key performance indicators (KPIs), making it easier to set strategic goals and allocate resources effectively.
+
+![Job Config 1](Countofvehiclebymodelyear.png)
+
+
 ## AWS Lambda
 
 The AWS Lambda function is responsible for fetching CSV data from the US Gov API, processing it, and storing the result in an S3 bucket.
@@ -140,23 +163,4 @@ Glue Catalog Tables store metadata definitions in the Glue Catalog Database, des
   
 - **Setup:** You can create these tables via the AWS Glue Console, AWS CLI, or by running Glue Crawlers that automatically infer schema and update the table definitions.
 
-
-
-# EV Data ETL Pipeline - AWS
-
-This repository contains the ETL pipeline for processing Electric Vehicle (EV) data using various AWS services such as Lambda, S3, Glue, and Athena, ultimately enabling business users to generate insights via Power BI dashboards. 
-
-## Power BI Visuals and Their Role in Business Decision-Making
-
-Power BI is a powerful business intelligence tool used to visualize data and derive actionable insights. In this project, curated EV data is visualized using Power BI to track sales trends for specific vehicle models across different regions of the US over the years. These visuals help businesses:
-
-- **Identify Market Trends:** Power BI's visuals provide a clear view of sales patterns and trends across regions, helping businesses understand where demand is growing and where it’s declining.
-  
-- **Make Data-Driven Decisions:** Instead of relying on intuition, Power BI dashboards empower decision-makers with data-driven insights. Visualizations highlight key performance indicators (KPIs), making it easier to set strategic goals and allocate resources effectively.
-  
-- **Enhanced Reporting:** With Power BI, users can create interactive reports that allow stakeholders to drill down into specific data points, filter insights by region or time period, and adjust focus based on evolving business needs.
-
-- **Faster Response to Market Changes:** Visual analytics in Power BI enables faster responses to market changes by uncovering real-time insights. Whether it’s identifying low-performing models or emerging high-demand regions, businesses can adapt quickly to maintain competitiveness.
-
-By integrating this pipeline with Power BI, businesses not only automate the ingestion and processing of raw data but also unlock the ability to visualize this data in meaningful ways, driving better and faster business decisions.
 
