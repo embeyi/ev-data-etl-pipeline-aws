@@ -54,7 +54,7 @@ The high-level architecture of the pipeline is as follows:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ev-data-etl-pipeline-aws.git
+git clone https://github.com/embeyi/ev-data-etl-pipeline-aws.git
 
 ```
 
