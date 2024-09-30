@@ -164,3 +164,9 @@ Glue Catalog Tables store metadata definitions in the Glue Catalog Database, des
 - **Setup:** You can create these tables via the AWS Glue Console, AWS CLI, or by running Glue Crawlers that automatically infer schema and update the table definitions.
 
 
+- **Orchestration:** AWS Step Functions orchestrate the entire ETL workflow, managing the coordination of services.
+
+  
+![Job Config 1](Step.png)
+![Job Config 2](step2.png)
+
