@@ -74,15 +74,15 @@ Power BI is a powerful business intelligence tool used to visualize data and der
 By integrating this pipeline with Power BI, businesses not only automate the ingestion and processing of raw data but also unlock the ability to visualize this data in meaningful ways, driving better and faster business decisions.
 
 
-![Job Config 2](HEV-BEVByMakers.png)
+![Job Config 2](images/HEV-BEVByMakers.png)
 
 - **Enhanced Reporting:** With Power BI, users can create interactive reports that allow stakeholders to drill down into specific data points, filter insights by region or time period, and adjust focus based on evolving business needs.
 
-![Job Run](Vehicleinarea.png)
+![Job Run](images/Vehicleinarea.png)
 
 - **Make Data-Driven Decisions:** Instead of relying on intuition, Power BI dashboards empower decision-makers with data-driven insights. Visualizations highlight key performance indicators (KPIs), making it easier to set strategic goals and allocate resources effectively.
 
-![Job Config 1](Countofvehiclebymodelyear.png)
+![Job Config 1](images/Countofvehiclebymodelyear.png)
 
 
 ## AWS Lambda
@@ -117,9 +117,9 @@ The AWS Lambda function is responsible for fetching CSV data from the US Gov API
 ### Glue Job (`job_landing_to_curated`)
 - **Setup:** This Glue job takes a single file from the landing bucket, splits the data into two files based on categories, and updates column names. The processed files are stored in separate folders within the curated bucket.
 
-![Job Config 1](job-landing-to-curated-setting.png)
-![Job Config 2](job-landing-to-curated-setting-2.png)
-![Job Run](job-landing-to-curated.png)
+![Job Config 1](images/job-landing-to-curated-setting.png)
+![Job Config 2](images/job-landing-to-curated-setting-2.png)
+![Job Run](images/job-landing-to-curated.png)
 
 - **Reason:** This transformation standardizes the data structure, simplifies future manipulations, and makes it more accessible for analytics, reporting, and machine learning.
 
@@ -133,7 +133,7 @@ The AWS Lambda function is responsible for fetching CSV data from the US Gov API
 
 The AWS Glue Crawler automatically discovers and catalogs data across various sources like S3, RDS, and DynamoDB, managing up-to-date metadata for your datasets.
 
-![Create Crawler](create-crawler.png)
+![Create Crawler](images/create-crawler.png)
 
 ### Crawler for Landing Bucket (`landing-bucket-crawler`)
 - **Setup:** Configured to automatically discover data in the S3 landing bucket and update the Glue Data Catalog.
@@ -168,6 +168,6 @@ Glue Catalog Tables store metadata definitions in the Glue Catalog Database, des
 - AWS Step Functions orchestrate the entire ETL workflow, managing the coordination of services.
 
   
-![Job Config 1](Step.png)
-![Job Config 2](step2.png)
+![Job Config 1](images/Step.png)
+![Job Config 2](images/step2.png)
 
