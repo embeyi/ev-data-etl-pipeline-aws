@@ -7,7 +7,7 @@ This repository contains the ETL pipeline for processing Electric Vehicle (EV) d
 - **Serverless Architecture:** Uses AWS Lambda for compute tasks, providing a scalable, cost-effective serverless solution.
 - **Data Ingestion:** Data is automatically ingested from S3 buckets and triggered by events such as file uploads.
 - **Data Transformation:** AWS Glue handles data transformations, utilizing Spark-based jobs to convert raw data into structured formats.
-- **Data Querying:** Amazon Athena is used to query processed data directly from S3 using SQL queries.
+- **Data Querying:** Amazon Athena is used to query processed data directly from S3 using SQL queries. 
 - **Metadata Management:** AWS Glue Data Catalog tracks metadata, schema, and table definitions for easy querying.
 - **Orchestration:** AWS Step Functions orchestrate the entire ETL workflow, managing the coordination of services.
 - **Monitoring:** AWS CloudWatch monitors all pipeline processes, logging, and providing alerts for failures and performance metrics.
