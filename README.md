@@ -2,7 +2,7 @@
 
 This repository contains the ETL pipeline for processing Electric Vehicle (EV) data using a variety of AWS services, including Lambda, S3, Step Functions, Glue, Athena, and Data Catalog. The pipeline automates the ingestion, transformation, and storage of EV-related data for downstream analytics, reporting, and visualizations.
 
-## Features
+## Features 
 
 - **Serverless Architecture:** Uses AWS Lambda for compute tasks, providing a scalable, cost-effective serverless solution.
 - **Data Ingestion:** Data is automatically ingested from S3 buckets and triggered by events such as file uploads. 
