@@ -30,7 +30,7 @@ Before deploying this pipeline, ensure the following:
 
 - **AWS Account:** You will need an active AWS account with permissions to create Lambda functions, S3 buckets, Glue jobs, Step Functions, and more.
 - **AWS CLI:** Set up AWS CLI or use the AWS Management Console to manage and deploy services.
-- **Data Source:** Data should be available in S3 for ingestion into the pipeline.
+- **Data Source:** Data should be available in S3 for ingestion into the pipeline. 
 
 ## Architecture
 
